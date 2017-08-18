@@ -1,0 +1,34 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/sock-merchant/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int c[] = new int[n];
+        for(int c_i=0; c_i < n; c_i++){
+            c[c_i] = in.nextInt();
+        }
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < c.length; i++){
+            if(map.containsKey(c[i])){
+            	map.put(c[i], map.get(c[i]) + 1); 
+            } else {
+                map.put(c[i], 1);
+            }
+        }
+        int count = 0;
+        for(Map.Entry<Integer, Integer> m:map.entrySet()){  
+        	if (m.getValue()/2 != 0 && m.getValue()>1) {
+                count += m.getValue()/2;      
+            } 
+        } 
+        System.out.println(count);
+    }
+}

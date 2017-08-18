@@ -1,0 +1,31 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/grading/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void solve(int[] grades){
+        // Complete this function
+        //int[] new_grades = new int[grades.length];
+        for(int n=0; n<grades.length; n++){
+            if((5*((grades[n]/5)+1) - grades[n]) < 3 && !(grades[n]<38)){grades[n] = 5*((grades[n]/5)+1);}
+            System.out.println(grades[n]);
+        }     
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] grades = new int[n];
+        for(int grades_i=0; grades_i < n; grades_i++){
+            grades[grades_i] = in.nextInt();
+        }
+        
+        solve(grades);
+    }
+}
+

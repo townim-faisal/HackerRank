@@ -1,0 +1,21 @@
+--
+Hackerrank Algo Practise
+--
+
+100<x = 7083+
+1k<x = 3675+
+10k<x = 1708+
+
+--
+Algo Sub-domain Meaning
+--
+
+Implementation = normal mathematical or logic khatai kora jabe erokom shuja shuja problem gula
+
+Game theory = kichu game ase jegula khlle k jitbe age theke tik kore fela jai ....Oi game gular algorithm. Nim game bole ogula ke.....
+
+Constructive = some algo cannot hold any category
+
+Dynamic = age kichu value save kore rekhe okhan theke porer value gula khuje ber kora
+
+Bit manipulation = and or not ei type logic gula use kore gun vag kora.. binary te represent kore then bivinno operation chalai

@@ -1,0 +1,35 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/migratory-birds/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] types = new int[n];
+        for(int types_i=0; types_i < n; types_i++){
+            types[types_i] = in.nextInt();
+        }
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for (int i = 0; i < types.length; i++){
+            if(map.containsKey(types[i])){
+            	map.put(types[i], map.get(types[i]) + 1); 
+            } else {
+                map.put(types[i], 1);
+            }
+        }
+        int maxValueInMap=(Collections.max(map.values()));
+        for(Map.Entry<Integer, Integer> m : map.entrySet()){  
+        	if (m.getValue() == maxValueInMap) {
+                System.out.println(m.getKey());
+                break;
+            }  
+        } 
+    }
+}

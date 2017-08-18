@@ -1,0 +1,46 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/mini-max-sum/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    //selection sort
+    void sort(long arr[]){
+        int n = arr.length;
+ 
+        for (int i = 0; i < n-1; i++){
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+                if (arr[j] < arr[min_idx])
+                    min_idx = j;
+            long temp = arr[min_idx];
+            arr[min_idx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+    
+    public static void main(String[] args) {
+        Solution sort = new Solution();
+        Scanner in = new Scanner(System.in);
+        long a = in.nextLong();
+        long b = in.nextLong();
+        long c = in.nextLong();
+        long d = in.nextLong();
+        long e = in.nextLong();
+        long arr[] = {a, b, c, d, e};
+        sort.sort(arr);
+        long min_sum=0 ; 
+        long max_sum=0;
+        for(int i=1; i<arr.length-1; i++){
+            min_sum += arr[i];
+            max_sum += arr[i];
+            //System.out.println(arr[i]);
+        }
+        min_sum = min_sum + arr[0];
+        max_sum += arr[arr.length-1];
+        System.out.println(min_sum+" "+max_sum);
+    }
+}

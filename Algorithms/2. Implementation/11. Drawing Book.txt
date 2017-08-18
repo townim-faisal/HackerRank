@@ -1,0 +1,31 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/drawing-book/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int p = in.nextInt();
+        int count_beg = (int)Math.ceil(((double)p-1.0)/2) ;
+        int count_fin = (int)Math.ceil((((double)p-(double)n)/2));
+        if(n%2!=0){
+            count_fin = Math.abs((int)Math.ceil((((double)p-(double)n)/2)));
+        }else{
+            count_fin = Math.abs((int)Math.ceil((((double)n-(double)p)/2)));
+        }
+        if(count_beg<count_fin){
+            System.out.println(count_beg);
+        }else{
+            System.out.println(count_fin);
+        } 
+        
+    }
+}
+
+

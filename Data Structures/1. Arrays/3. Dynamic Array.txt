@@ -1,0 +1,44 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/dynamic-array/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int q = in.nextInt();
+        List<Integer>[] seqList = new List[n];
+        for (int i = 0; i < n; i++) {
+            seqList[i] = new ArrayList<>();
+        }
+        int lastAns = 0;
+        for (int i = 0; i < q; i++) {
+            int z = in.nextInt();
+            int x = in.nextInt();
+            int y = in.nextInt();
+            List<Integer> seq = seqList[(x^lastAns)%n];
+            switch (z) {
+                case 1:
+                    seq.add(y);
+                    break;
+                case 2:
+                    lastAns = seq.get(y%seq.size());
+                    System.out.println(lastAns);
+                    break;
+            }
+        }
+
+        }
+    }

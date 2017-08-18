@@ -1,0 +1,25 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/cats-and-a-mouse/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int a0 = 0; a0 < q; a0++){
+            int x = in.nextInt();
+            int y = in.nextInt();
+            int z = in.nextInt();
+            int dis1 = Math.abs(z-x);
+            int dis2 = Math.abs(z-y);
+            if(dis1>dis2){System.out.println("Cat B");}
+            if(dis1<dis2){System.out.println("Cat A");}
+            if(dis1==dis2){System.out.println("Mouse C");}
+        }
+    }
+}

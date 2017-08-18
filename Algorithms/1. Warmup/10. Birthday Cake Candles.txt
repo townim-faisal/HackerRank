@@ -1,0 +1,26 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/birthday-cake-candles/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int height[] = new int[n];
+        int k = 0;
+        for(int height_i=0; height_i < n; height_i++){
+            height[height_i] = in.nextInt();
+        }
+        Arrays.sort(height);
+        for(int m=0; m<n; m++){
+            if(height[n-1]==height[m]) {k +=1;}
+        }
+        System.out.println(k);
+        
+    }
+}

@@ -1,0 +1,37 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/crush/download_pdf?language=English
+
+//https://codingin.wordpress.com/2017/02/19/solution-algorithmic-crush-in-java/
+
+public static void main(String[] args) {
+Scanner in = new Scanner(System.in);
+ 
+int n = in.nextInt();
+int m = in.nextInt();
+ 
+long[] myArray = new long[n+1];
+int a, b, k;
+ 
+// Loop through all the operations, creating our difArray in-place
+for (int i = 0; i < m; i++){
+a = in.nextInt();
+b = in.nextInt();
+k = in.nextInt();
+myArray[a] += k;
+ 
+// We don't care of tracking N+1
+if((b + 1) <= n) myArray[b + 1] -= k;
+}
+ 
+// To store the historical max as we go summing,
+// we need big variables for big numbers (remember the contraints)
+long max = 0;
+// To sum all elements
+long sum = 0;
+// Loop through our array to get our result
+for (int j = 1; j <= n; j++){
+sum += myArray[j];
+if (max < sum) max = sum;
+}
+ 
+System.out.println(max);
+}

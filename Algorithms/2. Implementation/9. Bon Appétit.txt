@@ -1,0 +1,30 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/bon-appetit/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int[] foods = new int[n];
+        int sum = 0;
+        for(int i=0; i < n; i++){
+            foods[i] = in.nextInt();
+            sum += foods[i];
+        }
+        int b = in.nextInt();
+        sum = sum - foods[k];
+        if(sum/2==b){
+            System.out.println("Bon Appetit");   
+        }else{
+            System.out.println(b-(sum/2));
+        }
+        
+    }
+}

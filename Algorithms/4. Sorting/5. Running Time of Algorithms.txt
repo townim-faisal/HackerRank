@@ -1,0 +1,41 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/runningtime/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void insertionSort(int[] arr)
+    {       
+        int n = arr.length;
+        int count = 0;
+        for (int i=1; i<n; ++i)
+        {
+            int key = arr[i];
+            int j = i-1;
+            while (j>=0 && arr[j] > key)
+            {
+                arr[j+1] = arr[j];
+                j = j-1;
+                count += 1;
+            }
+            arr[j+1] = key;
+        }
+        System.out.println(count);
+    }  
+      
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+       int s = in.nextInt();
+       int[] arr = new int[s];
+       for(int i=0;i<s;i++){
+            arr[i]=in.nextInt(); 
+       }
+       insertionSort(arr);    
+                    
+    }    
+    
+}

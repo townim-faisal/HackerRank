@@ -1,0 +1,38 @@
+//https://www.hackerrank.com/rest/contests/master/challenges/breaking-best-and-worst-records/download_pdf?language=English
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] s = new int[n];
+        int highest_score = 0;
+        int lowest_score = 0;
+        int count_high = 0;
+        int count_low = 0;
+        for(int s_i=0; s_i < n; s_i++){
+            s[s_i] = in.nextInt();
+            if(s_i == 0) {
+                highest_score = s[s_i];
+                lowest_score = s[s_i];
+            }
+            if(s[s_i]>highest_score){
+                highest_score = s[s_i];
+                count_high += 1;
+            }
+            if(s[s_i]<lowest_score){
+                lowest_score = s[s_i];
+                count_low += 1;
+            }
+        }
+        System.out.println(count_high+" "+count_low);
+    }
+}
+
+
